@@ -48,10 +48,10 @@ public class ContactsManager extends CordovaPlugin {
         this.executeArgs = args;
 
         if (ACTION_LIST_CONTACTS.equals(action)) {
-            if (cordova.hasPermission(android.Manifest.permission.READ_CONTACTS)) {
+            if (cordova.hasPermission(Manifest.permission.READ_CONTACTS)) {
                 execHelper();
             } else {
-                cordova.requestPermission(this, READ_CONTACTS_REQ_CODE, android.Manifest.permission.READ_CONTACTS);
+                cordova.requestPermission(this, READ_CONTACTS_REQ_CODE, Manifest.permission.READ_CONTACTS);
             }
             return true;
         }
